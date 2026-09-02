@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#4F46E5">
+  <meta name="description" content="SpendWise — private, local-first expense management.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.json">
+  <title>SpendWise</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%234F46E5'/%3E%3Cpath d='M18 33h18v8H18zM28 23h18v8H28z' fill='white'/%3E%3C/svg%3E">
+  <style>
+    /* Prevent a flash before the main stylesheet loads. */
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span></span><span></span></div>
+        <div><strong>SpendWise</strong><small>Personal finance</small></div>
+      </div>
+      <nav id="sidebarNav" class="nav-list"></nav>
+      <div class="sidebar-footer">
+        <button class="profile-card" data-action="open-settings" aria-label="Open settings">
+          <span class="avatar">SW</span><span><strong>Local Wallet</strong><small>Private on this device</small></span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="icon-btn mobile-menu" data-action="toggle-sidebar" aria-label="Open navigation">☰</button>
+        <div class="mobile-brand"><div class="brand-mark small"><span></span><span></span></div><strong>SpendWise</strong></div>
+        <div class="topbar-spacer"></div>
+        <button class="icon-btn" data-action="open-search" aria-label="Search">⌕</button>
+        <button class="icon-btn notification-button" data-action="open-notifications" aria-label="Notifications">♢<i id="notificationDot"></i></button>
+        <button class="avatar-btn" data-action="open-settings" aria-label="Open settings">SW</button>
+      </header>
+
+      <section id="screen" class="screen" tabindex="-1"></section>
+    </main>
+
+    <nav id="bottomNav" class="bottom-nav" aria-label="Mobile navigation"></nav>
+  </div>
+
+  <div id="modalRoot"></div>
+  <div id="toastRoot" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
